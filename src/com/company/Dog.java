@@ -3,6 +3,20 @@ package com.company;
 import java.util.Arrays;
 
 public class Dog {
+
+    public String breedOfDog;
+    public String coatColor;
+    public float weight;
+    public String groupp;
+    public int age;
+    public char sex;
+    public double tailLength;
+    public int numberOfPaws;
+    public String name;
+    private String subspecies;
+    private int typeDog;
+    private int play;
+    private int x, y;
     private String domain;
     private String kingdom;
     private String type;
@@ -11,21 +25,8 @@ public class Dog {
     private String family;
     private String clan;
     private String kind;
-    private String subspecies;
     private boolean hungry;
-    public String breedOfDog;
-    public String coatColor;
-    public float weight;
     private int heightOfTheWithers;
-    public String name;
-    public String groupp;
-    public int age;
-    public char sex;
-    public double tailLength;
-    public int numberOfPaws;
-    private int typeDog;
-    private int play;
-    private int x, y;
 
     public Dog() {
         domain = "Домен eukaryotic";
@@ -217,29 +218,48 @@ public class Dog {
     }
 
     public void feedADog() {
+        int full = 0;
+
+        while (full < 100) {
+            full += 10;
+            if (full == 100) {
+                System.out.println("Собака сыта. Хрр");
+            }
+        }
         hungry = false;
+    }
+
+    public void doWhileFeedADog() {
+        int full = 0;
+        do {
+            full += 10;
+        }
+        while (full < 100);
+        if (full >= 100) {
+            System.out.println("Наконец собака сыта.");
+        }
     }
 
 
     public void birdSearch() {
         int birdsCount = 5;
-        int widthSearch = 100;
-        int lengthSearch = 100;
+        final int WIDTH_SEARCH = 100;
+        final int LENGTH_SEARCH = 100;
         String[] birdsName = {"Бекас", "Вальдшнеп", "Дупель", " Куропатка", "Коростель"};
         x = 50;
         y = 0;
 
         Birds[] birds = new Birds[birdsCount];
         for (int i = 0; i < birdsCount; i++) {
-            birds[i] = new Birds(birdsName[i % birdsName.length], widthSearch, lengthSearch);
+            birds[i] = new Birds(birdsName[i % birdsName.length], WIDTH_SEARCH, LENGTH_SEARCH);
         }
 
-        for (; y <= lengthSearch; y += 10) {
+        for (; y <= LENGTH_SEARCH; y += 10) {
             boolean directRight = false;
-            if (x >= 0 && x < widthSearch) {
+            if (x >= 0 && x < WIDTH_SEARCH) {
                 directRight = true;
             }
-            for (; x <= widthSearch && x >= 0; ) {
+            for (; x <= WIDTH_SEARCH && x >= 0; ) {
 
                 {
                     for (int g = 0; g < birds.length; g++) {
@@ -259,10 +279,36 @@ public class Dog {
                     x--;
                 }
             }
-            x = x == (widthSearch + 1) ? widthSearch : 0;
+            x = x == (WIDTH_SEARCH + 1) ? WIDTH_SEARCH : 0;
         }
 
     }
 
+    public static String[] sortString(String[] birdsName) {
+        boolean change = false;
+        for (int z = 0; z < birdsName.length - 1; z++) {
+            char[] name1 = birdsName[z].toLowerCase().toCharArray();
+            char[] name2 = birdsName[z + 1].toLowerCase().toCharArray();
+            int length = Math.min(name1.length, name2.length);
+
+            for (int i = 0; i < length; i++) {
+                if (name1[i] > name2[i] || (i == length - 1 && name1 == name2 && name1.length > name2.length)){
+                    String emptyBirdsName = birdsName[z];
+                    birdsName[z] = birdsName[z+1];
+                    birdsName[z+1] = emptyBirdsName;
+                    change = true;
+                    break;}
+                else if(name1[i]==name2[i]){
+                 continue;
+                }
+                break;
+            }
+            if (change&& z<birdsName.length-2){
+               z =-1;
+               change = false;
+            }
+        }
+            return birdsName;
+    }
 }
 

@@ -3,6 +3,8 @@ package com.company;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -49,6 +51,11 @@ public class Main {
         System.out.println(dog2.getTypeDog());
       //  System.out.println (((int) (Math.random() * 101)));
         dog1.birdSearch();
+        Birds birds = new Birds("Фазан", 150, 100);
+        System.out.println(birds);
+        dog2.doWhileFeedADog();
+        String [] birdsName = {"Бекас", "Вальдшнеп", "Дупель", " Куропатка", "Коростель"};
+        System.out.println(Arrays.toString(birdsName));
     }
 
 }
