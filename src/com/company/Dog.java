@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Arrays;
 
-public class Dog {
+public class Dog<LENGTH_SEARCH> {
 
     public String breedOfDog;
     public String coatColor;
@@ -27,6 +27,8 @@ public class Dog {
     private String kind;
     private boolean hungry;
     private int heightOfTheWithers;
+    final int WIDTH_SEARCH = 100;
+    final int LENGTH_SEARCH = 100;
 
     public Dog() {
         domain = "Домен eukaryotic";
@@ -140,19 +142,30 @@ public class Dog {
         }
     }
 
-
-    public void birdSearch() {
+    private Birds[] createBirds(){
         int birdsCount = 5;
-        final int WIDTH_SEARCH = 100;
-        final int LENGTH_SEARCH = 100;
-        String[] birdsName = {"Бекас", "Вальдшнеп", "Дупель", " Куропатка", "Коростель"};
-        x = 50;
-        y = 0;
 
         Birds[] birds = new Birds[birdsCount];
-        for (int i = 0; i < birdsCount; i++) {
-            birds[i] = new Birds(birdsName[i % birdsName.length], WIDTH_SEARCH, LENGTH_SEARCH);
+        String[] birdsName = {"Бекас", "Вальдшнеп", "Дупель", " Куропатка", "Коростель"};
+        for (int i = 0;i < birdsCount;i++){
+            birds[i] = new Birds(birdsName[i%birdsName.length],WIDTH_SEARCH,LENGTH_SEARCH);
         }
+        return birds;
+    }
+
+    public void birdSearch(int starX, int startY) {
+   //     int birdsCount = 5;
+    //    final int WIDTH_SEARCH = 100;
+    //    final int LENGTH_SEARCH = 100;
+     //   String[] birdsName = {"Бекас", "Вальдшнеп", "Дупель", " Куропатка", "Коростель"};
+
+      //  Birds[] birds = new Birds[birdsCount];
+        //for (int i = 0; i < birdsCount; i++) {
+          //  birds[i] = new Birds(birdsName[i % birdsName.length], WIDTH_SEARCH, LENGTH_SEARCH);
+       // }
+        Birds[] birds = createBirds();
+        starX = x ;
+        startY = y ;
 
         for (; y <= LENGTH_SEARCH; y += 10) {
             boolean directRight = false;

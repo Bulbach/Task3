@@ -50,7 +50,7 @@ public class Main {
         System.out.println(dog2.isHungry());
         System.out.println(dog2.getTypeDog());
       //  System.out.println (((int) (Math.random() * 101)));
-        dog1.birdSearch();
+        dog1.birdSearch(50,0);
         Birds birds = new Birds("Фазан", 150, 100);
         System.out.println(birds);
         dog2.doWhileFeedADog();
