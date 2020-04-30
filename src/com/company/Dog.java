@@ -66,82 +66,6 @@ public class Dog {
         this.groupp = groupp;
     }
 
-    public String getDomain() {
-        return domain;
-    }
-
-    public void setDomain(String domain) {
-        this.domain = domain;
-    }
-
-    public String getKingdom() {
-        return kingdom;
-    }
-
-    public void setKingdom(String kingdom) {
-        this.kingdom = kingdom;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getDogClass() {
-        return dogClass;
-    }
-
-    public void setDogClass(String dogClass) {
-        this.dogClass = dogClass;
-    }
-
-    public String getSquad() {
-        return squad;
-    }
-
-    public void setSquad(String squad) {
-        this.squad = squad;
-    }
-
-    public String getFamily() {
-        return family;
-    }
-
-    public void setFamily(String family) {
-        this.family = family;
-    }
-
-    public String getClan() {
-        return clan;
-    }
-
-    public void setClan(String clan) {
-        this.clan = clan;
-    }
-
-    public String getKind() {
-        return kind;
-    }
-
-    public void setKind(String kind) {
-        this.kind = kind;
-    }
-
-    public String getSubspecies() {
-        return subspecies;
-    }
-
-
-    public void setSubspecies(String subspecies) {
-        this.subspecies = subspecies;
-    }
-
-    public int getHeightOfTheWithers() {
-        return heightOfTheWithers;
-    }
 
     public void setHeightOfTheWithers(int heightOfTheWithers) {
         this.heightOfTheWithers = heightOfTheWithers;
@@ -178,30 +102,6 @@ public class Dog {
         return play;
     }
 
-    @Override
-    public String toString() {
-        return "Dog{" + "\n" +
-                domain + "\n" +
-                kingdom + "\n" +
-                type + "\n" +
-                dogClass + "\n" +
-                squad + "\n" +
-                family + "\n" +
-                clan + "\n" +
-                kind + "\n" +
-                subspecies + "\n" +
-                "Порода " + breedOfDog + "\n" +
-                "Окрас " + coatColor + "\n" +
-                "Вес " + weight + "\n" +
-                "Высота в холке " + heightOfTheWithers + "\n" +
-                "Кличка " + name + "\n" +
-                "Группа " + groupp + "\n" +
-                "Возраст " + age + "\n" +
-                "Пол " + sex + "\n" +
-                "Длинна шерсти " + tailLength + "\n" +
-                "Колличество лап " + numberOfPaws + "\n" +
-                "}";
-    }
 
     public void goToBall(int ball) {
         if (ball > 0) {
@@ -310,5 +210,108 @@ public class Dog {
         }
             return birdsName;
     }
-}
 
+
+    @Override
+    public String toString() {
+        StringBuilder outprint = new StringBuilder();
+       outprint.append(  "Dog{").append("\n")
+                .append (domain).append("\n")
+                .append(kingdom) .append("\n")
+                .append(type).append("\n")
+                .append(dogClass).append("\n")
+                .append(squad).append("\n")
+                .append(family).append("\n")
+                .append(clan).append("\n")
+                .append(kind).append("\n")
+                .append(subspecies).append("\n")
+                .append("Порода ").append(breedOfDog).append("\n")
+                .append("Окрас ").append(coatColor).append("\n")
+                .append("Вес ").append(weight).append("\n")
+                .append("Высота в холке ").append(heightOfTheWithers).append("\n")
+                .append("Кличка ").append(name).append("\n")
+                .append("Группа ").append(groupp).append("\n")
+                .append("Возраст ").append(age).append("\n")
+                .append("Пол ").append(sex).append("\n")
+                .append("Длинна шерсти ").append(tailLength).append("\n")
+                .append("Колличество лап ").append(numberOfPaws).append("\n").append("}");
+         return outprint.toString();
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public String getKingdom() {
+        return kingdom;
+    }
+
+    public void setKingdom(String kingdom) {
+        this.kingdom = kingdom;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getDogClass() {
+        return dogClass;
+    }
+
+    public void setDogClass(String dogClass) {
+        this.dogClass = dogClass;
+    }
+
+    public String getSquad() {
+        return squad;
+    }
+
+    public void setSquad(String squad) {
+        this.squad = squad;
+    }
+
+    public String getFamily() {
+        return family;
+    }
+
+    public void setFamily(String family) {
+        this.family = family;
+    }
+
+    public String getClan() {
+        return clan;
+    }
+
+    public void setClan(String clan) {
+        this.clan = clan;
+    }
+
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
+    public String getSubspecies() {
+        return subspecies;
+    }
+
+
+    public void setSubspecies(String subspecies) {
+        this.subspecies = subspecies;
+    }
+
+    public int getHeightOfTheWithers() {
+        return heightOfTheWithers;
+    }
+}
